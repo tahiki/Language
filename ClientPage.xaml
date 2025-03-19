@@ -1,0 +1,80 @@
+﻿<Page x:Class="Language.ClientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Language"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ClientPage" FontFamily="Comic Sans MS" Background="#e7fabf" FontSize="16">
+
+    <Grid>
+        <ListView Name="ClientsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Image Width="100" Grid.Column="0" Stretch="UniformToFill" HorizontalAlignment="Center" Grid.RowSpan="4">
+                            <Image.Source>
+                                <Binding Path="PhotoPath">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>
+                                            Клиенты/images.jpg
+                                        </ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock Text="ID: "></TextBlock>
+                            <TextBlock Text="{Binding ID}"></TextBlock>
+                            <TextBlock Text="  "></TextBlock>
+                            <TextBlock Text="{Binding LastName}"></TextBlock>
+                            <TextBlock Text="  "></TextBlock>
+                            <TextBlock Text="{Binding FirstName}"></TextBlock>
+                            <TextBlock Text="  "></TextBlock>
+                            <TextBlock Text="{Binding Patronymic}"></TextBlock>
+                        </StackPanel>                        
+                        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                            <TextBlock Text="Пол: "></TextBlock>
+                            <TextBlock Text="{Binding GenderName}"></TextBlock>
+                            <TextBlock Text="  "></TextBlock>
+                            <TextBlock Text="Дата рождения:  "></TextBlock>
+                            <TextBlock Text="{Binding BirthdayString}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
+                            <TextBlock Text="Телефон:  "></TextBlock>
+                            <TextBlock Text="{Binding Phone}"></TextBlock>
+                            <TextBlock Text="  "></TextBlock>
+                            <TextBlock Text="e-mail:  "></TextBlock>
+                            <TextBlock Text="{Binding Email}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3">
+                            <TextBlock Text="Дата регистрации:  "></TextBlock>
+                            <TextBlock Text="{Binding RegistrationDateString}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4">
+                            <TextBlock Text="Дата последнего посещения:  "></TextBlock>
+                            <TextBlock Text="{Binding LastVisit}"></TextBlock>
+                            <TextBlock Text="  Кол-во посещений:  "></TextBlock>
+                            <TextBlock Text="{Binding VisitCount}"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
