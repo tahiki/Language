@@ -13,19 +13,20 @@ namespace Language
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SharafutdinovLanguageEntities : DbContext
+    public partial class SharafutdinovLanguageEntities1 : DbContext
     {
-        private static SharafutdinovLanguageEntities _context;
-
-        public static SharafutdinovLanguageEntities GetContext()
+        private static SharafutdinovLanguageEntities1 _context;
+        public static SharafutdinovLanguageEntities1 GetContext()
         {
             if (_context == null)
-                _context = new SharafutdinovLanguageEntities();
+            {
+                _context = new SharafutdinovLanguageEntities1();
 
+            }
             return _context;
         }
-        public SharafutdinovLanguageEntities()
-            : base("name=SharafutdinovLanguageEntities")
+        public SharafutdinovLanguageEntities1()
+            : base("name=SharafutdinovLanguageEntities1")
         {
         }
     

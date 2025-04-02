@@ -65,53 +65,53 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Client.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ClientService.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DocumentByService.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Manufacturer.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductPhoto.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSale.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ServicePhoto.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SharafutdinovLanguage.Context.cs">
+    <Compile Include="SharafutdinovLanguageModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SharafutdinovLanguage.Context.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="SharafutdinovLanguage.cs">
+    <Compile Include="SharafutdinovLanguageModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SharafutdinovLanguage.Designer.cs">
+    <Compile Include="SharafutdinovLanguageModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SharafutdinovLanguage.edmx</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Tag.cs">
-      <DependentUpon>SharafutdinovLanguage.tt</DependentUpon>
+      <DependentUpon>SharafutdinovLanguageModel.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
@@ -163,12 +163,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="SharafutdinovLanguage.edmx">
+    <EntityDeploy Include="SharafutdinovLanguageModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SharafutdinovLanguage.Designer.cs</LastGenOutput>
+      <LastGenOutput>SharafutdinovLanguageModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="SharafutdinovLanguage.edmx.diagram">
-      <DependentUpon>SharafutdinovLanguage.edmx</DependentUpon>
+    <None Include="SharafutdinovLanguageModel.edmx.diagram">
+      <DependentUpon>SharafutdinovLanguageModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -179,16 +179,6 @@
     <Resource Include="images\school_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SharafutdinovLanguage.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SharafutdinovLanguage.Context.cs</LastGenOutput>
-      <DependentUpon>SharafutdinovLanguage.edmx</DependentUpon>
-    </Content>
-    <Content Include="SharafutdinovLanguage.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SharafutdinovLanguage.edmx</DependentUpon>
-      <LastGenOutput>SharafutdinovLanguage.cs</LastGenOutput>
-    </Content>
     <Resource Include="Клиенты\images.jpg" />
     <Resource Include="Клиенты\1.jpg" />
     <Resource Include="Клиенты\10.jpg" />
@@ -293,6 +283,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SharafutdinovLanguageModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SharafutdinovLanguageModel.edmx</DependentUpon>
+      <LastGenOutput>SharafutdinovLanguageModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SharafutdinovLanguageModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SharafutdinovLanguageModel.edmx</DependentUpon>
+      <LastGenOutput>SharafutdinovLanguageModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

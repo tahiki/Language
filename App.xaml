@@ -5,7 +5,11 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#04ffa0"></Setter>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="175"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="#FF04A0FF"/>
+            <Setter Property="FontSize" Value="20"/>
         </Style>
     </Application.Resources>
 </Application>

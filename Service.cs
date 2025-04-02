@@ -24,7 +24,7 @@ namespace Language
         public int ID { get; set; }
         public string Title { get; set; }
         public int DurationInSeconds { get; set; }
-        public int Cost { get; set; }
+        public decimal Cost { get; set; }
         public Nullable<double> Discount { get; set; }
         public string Description { get; set; }
         public string MainImagePath { get; set; }

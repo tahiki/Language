@@ -32,38 +32,16 @@ namespace Language
         public Nullable<System.DateTime> Birthday { get; set; }
         public string Email { get; set; }
         public System.DateTime RegistrationDate { get; set; }
-        
-        public string GenderName
-        {
-            get
-            {
-                return Gender.Name;
-            }
-        }
-        public string RegistrationDateString
-        {
-            get
-            {
-                if (RegistrationDate != null)
-                {
-                    return RegistrationDate.ToShortDateString();
-                }
-                else
-                    return "";
-            }
-        }
 
-        public string BirthdayString
+        public string VisitDate
         {
             get
             {
-                if (Birthday != null)
-                {
-                    return Birthday.Value.ToShortDateString();
-                }
+                if (this.VisitCount == 0)
+                    return "Нет";
                 else
                 {
-                    return "нет";
+                    return ClientService.Max(p => p.StartTime).ToShortDateString();
                 }
             }
         }
@@ -76,21 +54,42 @@ namespace Language
                 return datelist.Count;
             }
         }
-
-        public string LastVisit
+        public string GenderName
+        {
+            get { return Gender.Name; }
+        }
+        public string BirthdayString
         {
             get
             {
-                if (VisitCount != 0)
+                if (Birthday != null)
                 {
-                    return ClientService.Max(p => p.StartTime).ToShortDateString();
+                    return Birthday.Value.ToShortDateString();
                 }
                 else
-                {
-                    return "нет";
-                }
+                    return "";
             }
-        } 
+        }
+
+        public Client Clone()
+        {
+            return new Client
+            {
+                ID = this.ID,
+                LastName = this.LastName,
+                FirstName = this.FirstName,
+                Patronymic = this.Patronymic,
+                GenderCode = this.GenderCode,
+                Phone = this.Phone,
+                PhotoPath = this.PhotoPath,
+                Birthday = this.Birthday,
+                Email = this.Email,
+                RegistrationDate = this.RegistrationDate,
+                Gender = this.Gender,
+                ClientService = new System.Collections.Generic.HashSet<ClientService>(this.ClientService),
+                Tag = new System.Collections.Generic.HashSet<Tag>(this.Tag)
+            };
+        }
 
         public virtual Gender Gender { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
